@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,29 +8,25 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
-* {
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:'Poppins', sans-serif;
-}
-
 body {
-  background:#f5f7fa;
-  color:#333;
+  margin:0;
+  font-family:'Poppins', sans-serif;
+  background:#000;
+  color:#fff;
 }
 
 /* NAV */
 nav {
-  position:fixed;
-  width:100%;
-  background:rgba(10,61,98,0.9);
-  backdrop-filter: blur(10px);
-  color:#fff;
   display:flex;
   justify-content:space-between;
+  align-items:center;
   padding:15px 30px;
-  z-index:1000;
+  background:#000;
+  border-bottom:1px solid gold;
+}
+
+nav img {
+  height:50px;
 }
 
 nav a {
@@ -42,36 +38,32 @@ nav a {
 /* HERO */
 .hero {
   height:100vh;
-  background:linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+  background:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),
   url('https://images.unsplash.com/photo-1501785888041-af3ef285b470') center/cover;
   display:flex;
-  align-items:center;
   justify-content:center;
+  align-items:center;
   text-align:center;
-  color:#fff;
 }
 
 .hero h1 {
-  font-size:48px;
-}
-
-.hero p {
-  margin:15px 0;
+  font-size:45px;
+  color:gold;
 }
 
 .btn {
-  background:#ff7a18;
+  background:gold;
+  color:#000;
   padding:12px 25px;
-  color:#fff;
-  border:none;
-  cursor:pointer;
-  text-decoration:none;
   border-radius:30px;
+  text-decoration:none;
+  margin-top:15px;
+  display:inline-block;
 }
 
 /* SECTION */
 section {
-  padding:80px 20px;
+  padding:60px 20px;
   text-align:center;
 }
 
@@ -83,49 +75,33 @@ section {
 }
 
 .card {
-  background:#fff;
-  padding:25px;
-  border-radius:15px;
-  box-shadow:0 10px 25px rgba(0,0,0,0.1);
-  transition:0.3s;
+  background:#111;
+  padding:20px;
+  border-radius:10px;
+  border:1px solid gold;
 }
 
-.card:hover {
-  transform:translateY(-10px);
+/* CONTACT */
+.contact {
+  background:#111;
 }
 
-/* FORM */
-form input, form textarea {
-  width:100%;
-  padding:10px;
-  margin:10px 0;
-  border-radius:8px;
-  border:1px solid #ccc;
-}
-
-/* WHATSAPP FLOAT */
+/* WHATSAPP */
 .whatsapp {
   position:fixed;
   bottom:20px;
   right:20px;
   background:#25D366;
-  color:white;
   padding:15px;
   border-radius:50%;
   text-decoration:none;
-  font-size:20px;
 }
 
-/* FOOTER */
-footer {
-  background:#0a3d62;
-  color:#fff;
-  padding:20px;
-}
-
-/* MOBILE */
-@media(max-width:600px){
-  .hero h1 {font-size:30px;}
+/* LANGUAGE */
+.lang-btn {
+  cursor:pointer;
+  margin-left:10px;
+  color:gold;
 }
 </style>
 </head>
@@ -133,61 +109,61 @@ footer {
 <body>
 
 <nav>
-  <h3>MAGAIE'S TRAVEL</h3>
+  <img src="logo.png" alt="Logo">
   <div>
-    <a href="#home">Home</a>
-    <a href="#services">Services</a>
-    <a href="#destinations">Destinations</a>
-    <a href="#contact">Contact</a>
+    <a href="#home" data-en="Home" data-pt="Início">Início</a>
+    <a href="#services" data-en="Services" data-pt="Serviços">Serviços</a>
+    <a href="#contact" data-en="Contact" data-pt="Contacto">Contacto</a>
+    <span class="lang-btn" onclick="setLang('pt')">PT</span> |
+    <span class="lang-btn" onclick="setLang('en')">EN</span>
   </div>
 </nav>
 
 <div class="hero" id="home">
   <div>
-    <h1>Explore the World with Confidence</h1>
-    <p>Luxury • Affordable • Personalized Travel</p>
-    <a href="#contact" class="btn">Start Your Journey</a>
+    <h1 data-en="Explore the World with Confidence" data-pt="Explore o Mundo com Confiança">
+      Explore o Mundo com Confiança
+    </h1>
+    <p data-en="Premium Travel Services Tailored for You" data-pt="Serviços de Viagem Premium Feitos para Si">
+      Serviços de Viagem Premium Feitos para Si
+    </p>
+    <a href="#contact" class="btn" data-en="Book Now" data-pt="Reservar Agora">Reservar Agora</a>
   </div>
 </div>
 
 <section id="services">
-  <h2>Our Services</h2>
+  <h2 data-en="Our Services" data-pt="Nossos Serviços">Nossos Serviços</h2>
   <div class="grid">
-    <div class="card"><h3>Flight Booking</h3><p>Best global deals.</p></div>
-    <div class="card"><h3>Tour Packages</h3><p>Custom travel plans.</p></div>
-    <div class="card"><h3>Visa Assistance</h3><p>Fast & reliable help.</p></div>
+    <div class="card" data-en="Visa Application (Portugal & Europe)" data-pt="Visto para Portugal e Europa">Visto para Portugal e Europa</div>
+    <div class="card" data-en="African Tours & Trips" data-pt="Viagens e Tours em África">Viagens e Tours em África</div>
+    <div class="card" data-en="Tour Guides Available" data-pt="Guias Turísticos Disponíveis">Guias Turísticos</div>
+    <div class="card" data-en="Flight Itinerary" data-pt="Itinerário de Voo">Itinerário de Voo</div>
+    <div class="card" data-en="Accommodation Booking" data-pt="Reserva de Alojamento">Reserva de Alojamento</div>
+    <div class="card" data-en="Ticket Purchase" data-pt="Compra de Passagens">Compra de Passagens</div>
+    <div class="card" data-en="Travel Insurance" data-pt="Seguro de Viagem">Seguro de Viagem</div>
   </div>
 </section>
 
-<section id="destinations">
-  <h2>Top Destinations</h2>
-  <div class="grid">
-    <div class="card"><h3>Dubai</h3></div>
-    <div class="card"><h3>South Africa</h3></div>
-    <div class="card"><h3>Zanzibar</h3></div>
-  </div>
+<section id="contact" class="contact">
+  <h2 data-en="Contact Us" data-pt="Contacto">Contacto</h2>
+  <p>Email: magaiestravelagency@gmail.com</p>
+  <p>📞 +258 87 984 3287</p>
+  <p>📞 +258 84 127 0739</p>
 </section>
 
-<section>
-  <h2>Why Choose Us</h2>
-  <p>We create personalized travel experiences with full support from start to finish.</p>
-</section>
-
-<section id="contact">
-  <h2>Book Your Trip</h2>
-  <form action="mailto:your@email.com" method="post" enctype="text/plain">
-    <input type="text" placeholder="Your Name" required>
-    <input type="email" placeholder="Your Email" required>
-    <textarea placeholder="Your Travel Plan"></textarea>
-    <button class="btn">Send Request</button>
-  </form>
-</section>
-
-<a class="whatsapp" href="https://wa.me/258XXXXXXXXX">💬</a>
+<a class="whatsapp" href="https://wa.me/258879843287">💬</a>
 
 <footer>
   <p>© 2026 MAGAIE'S TRAVEL & TOURS</p>
 </footer>
+
+<script>
+function setLang(lang){
+  document.querySelectorAll("[data-en]").forEach(el=>{
+    el.innerText = el.getAttribute("data-"+lang);
+  });
+}
+</script>
 
 </body>
 </html>
