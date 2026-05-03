@@ -244,10 +244,21 @@ Serviços de Viagem Premium Feitos para Si
 
 <script>
 function setLang(lang){
+  localStorage.setItem("lang", lang);
+  applyLang(lang);
+}
+
+function applyLang(lang){
   document.querySelectorAll("[data-en]").forEach(el=>{
-    el.innerText = el.getAttribute("data-"+lang);
+    el.innerText = el.getAttribute("data-" + lang);
   });
 }
+
+// Load saved language on page load
+document.addEventListener("DOMContentLoaded", () => {
+  const savedLang = localStorage.getItem("lang") || "pt";
+  applyLang(savedLang);
+});
 </script>
 
 </body>
