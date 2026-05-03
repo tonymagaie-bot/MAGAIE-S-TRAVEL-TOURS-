@@ -26,7 +26,6 @@ body {
   color:var(--white);
 }
 
-/* GOLD LINE UNDER HEADINGS */
 h2::after {
   content:"";
   display:block;
@@ -36,7 +35,6 @@ h2::after {
   margin:10px auto;
 }
 
-/* NAV */
 nav {
   display:flex;
   justify-content:space-between;
@@ -60,7 +58,6 @@ nav a:hover {
   color:var(--gold);
 }
 
-/* HERO */
 .hero {
   height:100vh;
   background:linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),
@@ -90,14 +87,12 @@ nav a:hover {
   color:#000;
 }
 
-/* SECTION */
 section {
   padding:80px 20px;
   text-align:center;
   scroll-margin-top:80px;
 }
 
-/* GRID */
 .grid {
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
@@ -105,7 +100,6 @@ section {
   margin-top:30px;
 }
 
-/* CARD */
 .card {
   background:#0a0a0a;
   border:1px solid var(--gold-soft);
@@ -123,12 +117,10 @@ section {
   color:var(--gold);
 }
 
-/* CONTACT */
 .contact {
   background:#111;
 }
 
-/* WHATSAPP */
 .whatsapp {
   position:fixed;
   bottom:20px;
@@ -140,7 +132,6 @@ section {
   text-decoration:none;
 }
 
-/* LANGUAGE */
 .lang-btn {
   cursor:pointer;
   margin-left:10px;
@@ -162,7 +153,6 @@ section {
 </div>
 </nav>
 
-<!-- HERO -->
 <div class="hero" id="home">
 <div>
 <h1 data-en="Explore the World with Confidence" data-pt="Explore o Mundo com Confiança">
@@ -175,57 +165,75 @@ Serviços de Viagem Premium Feitos para Si
 </div>
 </div>
 
-<!-- SERVICES -->
 <section id="services">
 <h2 data-en="Our Services" data-pt="Nossos Serviços">Nossos Serviços</h2>
 
 <div class="grid">
-<a class="card" href="visa.html">Visa Application</a>
-<a class="card" href="tours.html">African Tours</a>
-<a class="card" href="guides.html">Tour Guides</a>
-<a class="card" href="flights.html">Flight Itinerary</a>
-<a class="card" href="accommodation.html">Accommodation</a>
-<a class="card" href="insurance.html">Insurance</a>
+<a class="card" href="visa.html" data-en="Visa Application" data-pt="Pedido de Visto">Pedido de Visto</a>
+<a class="card" href="tours.html" data-en="African Tours" data-pt="Tours em África">Tours em África</a>
+<a class="card" href="guides.html" data-en="Tour Guides" data-pt="Guias Turísticos">Guias Turísticos</a>
+<a class="card" href="flights.html" data-en="Flight Itinerary" data-pt="Roteiro de Voo">Roteiro de Voo</a>
+<a class="card" href="accommodation.html" data-en="Accommodation" data-pt="Alojamento">Alojamento</a>
+<a class="card" href="insurance.html" data-en="Insurance" data-pt="Seguro">Seguro</a>
 </div>
 </section>
 
-<!-- SERVICE DETAILS -->
 <section id="visa">
-<h2>Visa Application</h2>
-<p>We assist with visa processing, documentation, and approvals.</p>
+<h2 data-en="Visa Application" data-pt="Pedido de Visto">Pedido de Visto</h2>
+<p data-en="We assist with visa processing, documentation, and approvals."
+   data-pt="Ajudamos no processo de visto, documentação e aprovação.">
+Ajudamos no processo de visto, documentação e aprovação.
+</p>
 </section>
 
 <section id="tours">
-<h2>African Tours</h2>
-<p>Explore curated travel experiences across Africa.</p>
+<h2 data-en="African Tours" data-pt="Tours em África">Tours em África</h2>
+<p data-en="Explore curated travel experiences across Africa."
+   data-pt="Explore experiências de viagem selecionadas em África.">
+Explore experiências de viagem selecionadas em África.
+</p>
 </section>
 
 <section id="guides">
-<h2>Tour Guides</h2>
-<p>Professional local guides for safe and enriching trips.</p>
+<h2 data-en="Tour Guides" data-pt="Guias Turísticos">Guias Turísticos</h2>
+<p data-en="Professional local guides for safe and enriching trips."
+   data-pt="Guias locais profissionais para viagens seguras e enriquecedoras.">
+Guias locais profissionais para viagens seguras e enriquecedoras.
+</p>
 </section>
 
 <section id="flights">
-<h2>Flight Itinerary</h2>
-<p>We plan the best routes and deals for your journey.</p>
+<h2 data-en="Flight Itinerary" data-pt="Roteiro de Voo">Roteiro de Voo</h2>
+<p data-en="We plan the best routes and deals for your journey."
+   data-pt="Planeamos as melhores rotas e preços para a sua viagem.">
+Planeamos as melhores rotas e preços para a sua viagem.
+</p>
 </section>
 
 <section id="accommodation">
-<h2>Accommodation Booking</h2>
-<p>Hotels, resorts, and stays tailored to your comfort.</p>
+<h2 data-en="Accommodation Booking" data-pt="Reserva de Alojamento">Reserva de Alojamento</h2>
+<p data-en="Hotels, resorts, and stays tailored to your comfort."
+   data-pt="Hotéis, resorts e alojamentos adaptados ao seu conforto.">
+Hotéis, resorts e alojamentos adaptados ao seu conforto.
+</p>
 </section>
 
 <section id="tickets">
-<h2>Ticket Purchase</h2>
-<p>Fast and secure booking for events and travel.</p>
+<h2 data-en="Ticket Purchase" data-pt="Compra de Bilhetes">Compra de Bilhetes</h2>
+<p data-en="Fast and secure booking for events and travel."
+   data-pt="Reserva rápida e segura para eventos e viagens.">
+Reserva rápida e segura para eventos e viagens.
+</p>
 </section>
 
 <section id="insurance">
-<h2>Travel Insurance</h2>
-<p>Comprehensive coverage for peace of mind.</p>
+<h2 data-en="Travel Insurance" data-pt="Seguro de Viagem">Seguro de Viagem</h2>
+<p data-en="Comprehensive coverage for peace of mind."
+   data-pt="Cobertura completa para sua tranquilidade.">
+Cobertura completa para sua tranquilidade.
+</p>
 </section>
 
-<!-- CONTACT -->
 <section id="contact" class="contact">
 <h2 data-en="Contact Us" data-pt="Contacto">Contacto</h2>
 <p>Email: magaiestravelagency@gmail.com</p>
@@ -233,7 +241,6 @@ Serviços de Viagem Premium Feitos para Si
 <p>📞 +258 84 127 0739</p>
 </section>
 
-<!-- WHATSAPP -->
 <a class="whatsapp" href="https://wa.me/258879843287?text=Hello%20I%20want%20to%20book%20a%20trip">
 💬
 </a>
@@ -254,7 +261,6 @@ function applyLang(lang){
   });
 }
 
-// Load saved language on page load
 document.addEventListener("DOMContentLoaded", () => {
   const savedLang = localStorage.getItem("lang") || "pt";
   applyLang(savedLang);
