@@ -4,19 +4,63 @@
 <meta charset="UTF-8">
 <title>Visa Services</title>
 <link rel="stylesheet" href="style.css">
+
+<style>
+/* BACKGROUND IMAGE */
+body {
+  background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
+  url('myphoto.jpg') center/cover no-repeat;
+  color: white;
+}
+</style>
+
 </head>
 
 <body>
 
 <nav>
-  <a href="index.html">← Home</a>
+  <a href="index.html" data-en="← Home" data-pt="← Início">← Início</a>
+
+  <!-- LANGUAGE BUTTONS -->
+  <span class="lang-btn" onclick="setLang('pt')">PT</span> |
+  <span class="lang-btn" onclick="setLang('en')">EN</span>
 </nav>
 
 <section>
-  <h1>Visa Application</h1>
-  <p>We assist with visa processing, documentation,and more.</p>
-  <a class="btn" href="https://wa.me/258879843287">Apply via WhatsApp</a>
+  <h1 data-en="Visa Application" data-pt="Pedido de Visto">
+    Pedido de Visto
+  </h1>
+
+  <p data-en="We assist with visa processing, documentation,and more."
+     data-pt="Ajudamos no processo de visto, documentação e muito mais.">
+     Ajudamos no processo de visto, documentação e muito mais.
+  </p>
+
+  <a class="btn" 
+     href="https://wa.me/258879843287"
+     data-en="Apply via WhatsApp"
+     data-pt="Solicitar via WhatsApp">
+     Solicitar via WhatsApp
+  </a>
 </section>
+
+<script>
+function setLang(lang){
+  localStorage.setItem("lang", lang);
+  applyLang(lang);
+}
+
+function applyLang(lang){
+  document.querySelectorAll("[data-en]").forEach(el=>{
+    el.innerText = el.getAttribute("data-" + lang);
+  });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const savedLang = localStorage.getItem("lang") || "pt";
+  applyLang(savedLang);
+});
+</script>
 
 </body>
 </html>
