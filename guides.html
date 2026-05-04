@@ -4,18 +4,79 @@
 <meta charset="UTF-8">
 <title>Tour Guides</title>
 <link rel="stylesheet" href="style.css">
+
+<style>
+/* FULL BACKGROUND */
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: 
+    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+    url('passport_flags.png') no-repeat center center / cover;
+  color: white;
+}
+
+/* NAV */
+nav {
+  padding: 20px;
+}
+
+/* CENTER CONTENT */
+section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+</style>
+
 </head>
 
 <body>
 
 <nav>
-  <a href="index.html">← Home</a>
+  <a href="index.html" data-en="← Home" data-pt="← Início">← Início</a>
+
+  <!-- LANGUAGE -->
+  <span onclick="setLang('pt')">PT</span> |
+  <span onclick="setLang('en')">EN</span>
 </nav>
 
 <section>
-  <h1>Tour Guides</h1>
-  <p>Professional local guides for safe and enriching travel experiences.</p>
+  <h1 data-en="Tour Guides" data-pt="Guias Turísticos">
+    Guias Turísticos
+  </h1>
+
+  <p data-en="Professional local guides for safe and enriching travel experiences."
+     data-pt="Guias locais profissionais para experiências de viagem seguras e enriquecedoras.">
+     Guias locais profissionais para experiências de viagem seguras e enriquecedoras.
+  </p>
 </section>
+
+<script>
+function setLang(lang){
+  localStorage.setItem("lang", lang);
+  applyLang(lang);
+}
+
+function applyLang(lang){
+  document.querySelectorAll("[data-en]").forEach(el=>{
+    el.textContent = el.getAttribute("data-" + lang);
+  });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const savedLang = localStorage.getItem("lang") || "pt";
+  applyLang(savedLang);
+});
+</script>
 
 </body>
 </html>
