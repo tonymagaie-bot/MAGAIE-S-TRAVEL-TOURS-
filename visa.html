@@ -3,13 +3,77 @@
 <head>
 <meta charset="UTF-8">
 <title>Visa Services</title>
-<link rel="stylesheet" href="style.css">
 
 <style>
-/* BACKGROUND IMAGE */
+
+/* RESET */
 html, body {
   height: 100%;
+  margin: 0;
+  font-family: Arial, sans-serif;
 }
+
+/* VIDEO BACKGROUND */
+.bg-video {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+/* DARK OVERLAY (for readability) */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 0;
+}
+
+/* NAV */
+nav {
+  position: relative;
+  z-index: 2;
+  padding: 20px;
+}
+
+nav a, .lang-btn {
+  color: white;
+  margin-right: 10px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+/* CENTER CONTENT */
+section {
+  position: relative;
+  z-index: 2;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 20px;
+}
+
+/* BUTTON */
+.btn {
+  margin-top: 20px;
+  padding: 12px 24px;
+  background: #25D366;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+</style>
+</head>
+
 <body>
 
 <!-- VIDEO BACKGROUND -->
@@ -29,7 +93,7 @@ html, body {
     Pedido de Visto
   </h1>
 
-  <p data-en="We assist with visa processing, documentation,and more."
+  <p data-en="We assist with visa processing, documentation, and more."
      data-pt="Ajudamos no processo de visto, documentação e muito mais.">
      Ajudamos no processo de visto, documentação e muito mais.
   </p>
