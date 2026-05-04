@@ -11,12 +11,13 @@ html, body {
   height: 100%;
 }
 body {
+body {
   margin: 0;
   min-height: 100vh;
-  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-  url('myphoto.png') no-repeat center top; /* 👈 change here */
-  background-size: contain; /* 👈 shows full image */
-  background-color: black;
+  background:
+    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+    url('myphoto.png') no-repeat center/contain,
+    url('myphoto.png') no-repeat center/cover;
   color: white;
 }
   section {
