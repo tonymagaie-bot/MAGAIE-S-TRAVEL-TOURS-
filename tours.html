@@ -4,18 +4,74 @@
 <meta charset="UTF-8">
 <title>African Tours</title>
 <link rel="stylesheet" href="style.css">
+
+<style>
+/* FULL BACKGROUND WITH YOUR PHOTO */
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+    url('myphoto.png') no-repeat center/contain,
+    url('myphoto.png') no-repeat center/cover;
+  color: white;
+}
+
+/* CENTER CONTENT */
+section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+</style>
+
 </head>
 
 <body>
 
 <nav>
-  <a href="index.html">← Home</a>
+  <a href="index.html" data-en="← Home" data-pt="← Início">← Início</a>
+
+  <!-- LANGUAGE -->
+  <span class="lang-btn" onclick="setLang('pt')">PT</span> |
+  <span class="lang-btn" onclick="setLang('en')">EN</span>
 </nav>
 
 <section>
-  <h1>African Tours</h1>
-  <p>Explore curated travel experiences across Africa.</p>
+  <h1 data-en="African Tours" data-pt="Tours em África">
+    Tours em África
+  </h1>
+
+  <p data-en="Explore curated travel experiences across Africa."
+     data-pt="Explore experiências de viagem selecionadas em África.">
+     Explore experiências de viagem selecionadas em África.
+  </p>
 </section>
+
+<script>
+function setLang(lang){
+  localStorage.setItem("lang", lang);
+  applyLang(lang);
+}
+
+function applyLang(lang){
+  document.querySelectorAll("[data-en]").forEach(el=>{
+    el.innerText = el.getAttribute("data-" + lang);
+  });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const savedLang = localStorage.getItem("lang") || "pt";
+  applyLang(savedLang);
+});
+</script>
 
 </body>
 </html>
