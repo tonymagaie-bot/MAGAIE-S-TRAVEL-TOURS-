@@ -10,33 +10,16 @@
 html, body {
   height: 100%;
 }
-body {
-  margin: 0;
-  min-height: 100vh;
-  background: 
-    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-    url('passport_flags.png') no-repeat center center / cover;
-  color: white;
-}
-  section {
-  min-height: 100vh;              /* 👈 fills full screen */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;        /* vertical center */
-  align-items: center;            /* horizontal center */
-  text-align: center;
-  padding: 20px;
-  }
-</style>
-
-</head>
-
 <body>
+
+<!-- VIDEO BACKGROUND -->
+<video class="bg-video" autoplay muted loop playsinline>
+  <source src="video.mp4" type="video/mp4">
+</video>
 
 <nav>
   <a href="index.html" data-en="← Home" data-pt="← Início">← Início</a>
 
-  <!-- LANGUAGE BUTTONS -->
   <span class="lang-btn" onclick="setLang('pt')">PT</span> |
   <span class="lang-btn" onclick="setLang('en')">EN</span>
 </nav>
