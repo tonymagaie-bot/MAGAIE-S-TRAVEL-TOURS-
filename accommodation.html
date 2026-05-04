@@ -4,18 +4,74 @@
 <meta charset="UTF-8">
 <title>Accommodation</title>
 <link rel="stylesheet" href="style.css">
+
+<style>
+/* FULL BACKGROUND */
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+    url('City.jpg') no-repeat center/contain,
+    url('City.jpg') no-repeat center/cover;
+  color: white;
+}
+
+/* CENTER CONTENT */
+section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+</style>
+
 </head>
 
 <body>
 
 <nav>
-  <a href="index.html">← Home</a>
+  <a href="index.html" data-en="← Home" data-pt="← Início">← Início</a>
+
+  <!-- LANGUAGE -->
+  <span class="lang-btn" onclick="setLang('pt')">PT</span> |
+  <span class="lang-btn" onclick="setLang('en')">EN</span>
 </nav>
 
 <section>
-  <h1>Accommodation Booking</h1>
-  <p>Hotels, resorts, and stays tailored to your comfort.</p>
+  <h1 data-en="Accommodation Booking" data-pt="Reserva de Alojamento">
+    Reserva de Alojamento
+  </h1>
+
+  <p data-en="Hotels, resorts, and stays tailored to your comfort."
+     data-pt="Hotéis, resorts e alojamentos adaptados ao seu conforto.">
+     Hotéis, resorts e alojamentos adaptados ao seu conforto.
+  </p>
 </section>
+
+<script>
+function setLang(lang){
+  localStorage.setItem("lang", lang);
+  applyLang(lang);
+}
+
+function applyLang(lang){
+  document.querySelectorAll("[data-en]").forEach(el=>{
+    el.innerText = el.getAttribute("data-" + lang);
+  });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const savedLang = localStorage.getItem("lang") || "pt";
+  applyLang(savedLang);
+});
+</script>
 
 </body>
 </html>
