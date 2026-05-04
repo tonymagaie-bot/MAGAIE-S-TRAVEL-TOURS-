@@ -7,6 +7,9 @@
 
 <style>
 /* BACKGROUND IMAGE */
+html, body {
+  height: 100%;
+}
 body {
   margin: 0;
   min-height: 100vh; /* 👈 IMPORTANT */
@@ -16,6 +19,15 @@ body {
   background-attachment: fixed; /* 👈 optional: smooth effect */
   color: white;
 }
+  section {
+  min-height: 100vh;              /* 👈 fills full screen */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;        /* vertical center */
+  align-items: center;            /* horizontal center */
+  text-align: center;
+  padding: 20px;
+  }
 </style>
 
 </head>
